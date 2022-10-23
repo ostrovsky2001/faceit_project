@@ -1,6 +1,7 @@
 import requests
 import time
 
+
 class FaceitApi():
     def __init__(self,token):
         self.__api_token = token

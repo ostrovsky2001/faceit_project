@@ -85,60 +85,64 @@ columnsdb_life_stats = {
 connection = create_connection(db_name,db_user,db_password,db_host,db_port)
 fa = FaceitApi.FaceitApi(token)
 was_parsing = []
-for match_id in next_matches:
-    was_parsing.append(match_id)
-    players_id = fa.get_players_id_and_meta_stats(match_id)
-    if players_id !=429:
-        players_id,meta_stats,timestamp_to = players_id[0],players_id[1],players_id[2]
+try:
 
-        insert_values(connection,schema='raw_data',table='meta_info_match',
-              values=meta_stats,columns=['match_id','player_id','started_at','membership',
-                                         'anticheat_required','game_skill_level','team_id','faction','winner_team'])
+    for match_id in next_matches:
+        was_parsing.append(match_id)
+        players_id = fa.get_players_id_and_meta_stats(match_id)
+        if players_id !=429:
+            players_id,meta_stats,timestamp_to = players_id[0],players_id[1],players_id[2]
 
-        map_stats = []
-        for player in players_id:
-            all_stats = fa.get_all_statistics(player)
-            if all_stats!=429:
-                life_stats = all_stats[0]
-                life_stats_columns = []
-                life_stats_values = [tuple(life_stats.values())]
-                for key,value in life_stats.items():
-                    life_stats_columns.append(columnsdb_life_stats[key])
+            insert_values(connection,schema='raw_data',table='meta_info_match',
+                  values=meta_stats,columns=['match_id','player_id','started_at','membership',
+                                             'anticheat_required','game_skill_level','team_id','faction','winner_team'])
 
-                insert_values(connection,schema='raw_data',table='life_stats',
-                              values=life_stats_values,columns=life_stats_columns)
+            map_stats = []
+            for player in players_id:
+                all_stats = fa.get_all_statistics(player)
+                if all_stats!=429:
+                    life_stats = all_stats[0]
+                    life_stats_columns = []
+                    life_stats_values = [tuple(life_stats.values())]
+                    for key,value in life_stats.items():
+                        life_stats_columns.append(columnsdb_life_stats[key])
 
-
-                for key,value in all_stats[1].items():
-                    map_stats.append(tuple([key]+
-                        [value['player_id'],value['K/D Ratio'],value['Average Quadro Kills'],value['Average MVPs'],
-                        value['Average Assists'],value['Penta Kills'],value['Headshots'],value['Average Kills'],
-                        value['Quadro Kills'],value['Wins'],value['Win Rate %'],value['Matches'],value['Triple Kills'],
-                        value['Headshots per Match'],value['Average K/R Ratio'],value['Average Deaths'],value['Total Headshots %'],
-                        value['K/R Ratio'],value['Average Triple Kills'],value['Average Headshots %'],value['Rounds'],
-                        value['Assists'],value['MVPs'],value['Kills'],value['Deaths'],value['Average Penta Kills'],value['Average K/D Ratio'],
-                        value['time_parse']]))
+                    insert_values(connection,schema='raw_data',table='life_stats',
+                                  values=life_stats_values,columns=life_stats_columns)
 
 
-
-                last_matches = fa.get_last_matches_id(player,timestamp_to)
-
-                if last_matches!=429 or type(last_matches)!=int:
-                    stats_previos_match = []
-                    for prev_match in last_matches:
-                        stats = fa.get_stats_of_match(prev_match,player)
-                        if stats!=429:
-                            stats_previos_match.append(stats)
-
-                    insert_values(connection,schema='raw_data',table='players_previous_stats',
-                          values=stats_previos_match,columns=players_previous_stats_columns)
-
-                    last_5_match = fa.get_last_5_match(player)
-                    if last_5_match!=429:
-                        for m in last_5_match:
-                            if (m not in was_parsing) and (m not in next_matches):
-                                next_matches.append(m)
+                    for key,value in all_stats[1].items():
+                        map_stats.append(tuple([key]+
+                            [value['player_id'],value['K/D Ratio'],value['Average Quadro Kills'],value['Average MVPs'],
+                            value['Average Assists'],value['Penta Kills'],value['Headshots'],value['Average Kills'],
+                            value['Quadro Kills'],value['Wins'],value['Win Rate %'],value['Matches'],value['Triple Kills'],
+                            value['Headshots per Match'],value['Average K/R Ratio'],value['Average Deaths'],value['Total Headshots %'],
+                            value['K/R Ratio'],value['Average Triple Kills'],value['Average Headshots %'],value['Rounds'],
+                            value['Assists'],value['MVPs'],value['Kills'],value['Deaths'],value['Average Penta Kills'],value['Average K/D Ratio'],
+                            value['time_parse']]))
 
 
-        insert_values(connection,schema='raw_data',table='map_stats',
-              values=map_stats,columns=map_stats_columns)
+
+                    last_matches = fa.get_last_matches_id(player,timestamp_to)
+
+                    if last_matches!=429 or type(last_matches)!=int:
+                        stats_previos_match = []
+                        for prev_match in last_matches:
+                            stats = fa.get_stats_of_match(prev_match,player)
+                            if stats!=429:
+                                stats_previos_match.append(stats)
+
+                        insert_values(connection,schema='raw_data',table='players_previous_stats',
+                              values=stats_previos_match,columns=players_previous_stats_columns)
+
+                        last_5_match = fa.get_last_5_match(player)
+                        if last_5_match!=429:
+                            for m in last_5_match:
+                                if (m not in was_parsing) and (m not in next_matches):
+                                    next_matches.append(m)
+
+
+            insert_values(connection,schema='raw_data',table='map_stats',
+                  values=map_stats,columns=map_stats_columns)
+except:
+    print('Что-то пошло не так!')

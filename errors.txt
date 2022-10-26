@@ -1,0 +1,88 @@
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 2ce72b81-6933-427a-923f-6bf3d6075847;    match_id: 1-a87df660-4beb-42f8-9c65-04bbf72cd2d6
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: f51e9d15-c858-4892-b367-efdcda4b7d0b;    match_id: 1-f4b1de1c-24b8-475f-9106-1ac44f91ff4b
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: fa6f5378-2053-4fa9-89a8-c50d11472c90;    match_id: 1-5d60e1c0-9ab8-4c5b-9bcc-02a6473186bd
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: a6695a11-3b38-4e9b-b6a0-fce57b80027e;    match_id: 1-52abed4b-7fac-478b-bc92-e82edaae1076
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: c42b0ba3-0f8c-44a9-a2a9-a49350e7f6bc;    match_id: 1-eeda21e2-4949-4b43-976a-e2e716cfc354
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 0f88699a-2ab6-40ab-9864-1e4c80ee43b5;    match_id: 1-d99e64ef-3b0d-4b03-8fa5-af16e6f69ca4
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 0f88699a-2ab6-40ab-9864-1e4c80ee43b5;    match_id: 1-14926d0a-d1ba-40fe-a4e7-ca3e94608127
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: aa69f42c-6dac-4bde-a5b6-8cd19e8c5eda;    match_id: 1-4fb2e361-ff14-4d2e-acfe-558a28630b17
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: f7c0fc8d-e6b1-4b13-9d09-eafe93efaaa0;    match_id: 1-25cc9ab1-e884-436c-a6eb-455dcad43076
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 5f770c67-71c2-4fcb-a9e1-ffa0baefa688;    match_id: 1-f45b2762-d5fa-4804-906a-9b052f99cca4
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 866882a9-24c9-4271-8b26-165fc3b6ace4;    match_id: 1-eedc1e80-b290-4318-95f8-b5978acfcfc6
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: d833a6a5-d4c0-4400-ad8e-e7ea0ed8b1a6;    match_id: 1-d3ed11fc-57d2-48b6-8dbc-6a840a926914
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: d833a6a5-d4c0-4400-ad8e-e7ea0ed8b1a6;    match_id: 1-48f47360-7e14-402f-8b27-45faa99c9685
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: d833a6a5-d4c0-4400-ad8e-e7ea0ed8b1a6;    match_id: 1-b770465a-c382-4f97-8822-e394d6437064
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 51d17f62-6c35-4f7e-b119-7e911dff240a;    match_id: 1-5778214d-f969-4332-bdc8-b3d6f0d164b2
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 66b633a4-ebfa-48a5-8b77-1fa27ecc2baf;    match_id: 1-9a3e0ddb-0021-4b61-bb2e-a1771cf52734
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 16e2b9d4-0fab-4bd8-bc50-e5a2157d21c7;    match_id: 1-cf212448-dbc4-40b2-8f24-2b97da1232a0
+<Response [200 OK]>: local variable 'players_stats' referenced before assignment get_stats_of_match    player_id: 7be11e66-6a4a-4559-ba8d-0cc9de9412cf;    match_id: 1-ddb1d195-9a40-4b4c-b212-263573993d11
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-7d783e4c-7af9-456d-81db-63c589166b1c
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-5d0958a3-1da2-4430-a2f0-0929d41591ac
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-d04f8cf0-ce04-4868-92ca-a2bd9cd84257
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-9918455b-d87f-44a2-8b7e-0cb4e3c43a8b
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-0c2a4069-db0e-4a37-b2e5-387f1737682d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-03007eef-3475-43a6-b808-1c67aaadaaaf
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-ce5e1481-3072-4910-ac9c-8cc242ed6683
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-2d861846-03d0-48a5-a9c9-1cc7219199e8
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 2ac05b32-7320-4e81-870e-16acdb93da2e;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0a70bf1d-756f-4707-b8d8-8b542191a391;    match_id: 1-e164c270-8486-4d27-ad03-9ee75fd98ae8
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0a70bf1d-756f-4707-b8d8-8b542191a391;    match_id: 1-a9ac3939-abcf-46bc-9e17-aaabc4ec751a
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0a70bf1d-756f-4707-b8d8-8b542191a391;    match_id: 1-68805c95-8abd-4d00-8e7a-50ee78f534d3
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a281154c-b5c4-4b42-807a-1f75f97ca203;    match_id: 1-5e1ae4ba-2486-4521-92f8-17b829129a26
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 67fd9336-867f-4a7a-8c1b-e31788a9fda7;    match_id: 1-29dd35c9-2d43-4b88-b465-5e3714f19275
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: bb8fcb82-dcf3-4d7b-bd09-a556f6d7ab44;    match_id: 1-46174dbb-c164-4218-a8bf-b20f7883a920
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: bb8fcb82-dcf3-4d7b-bd09-a556f6d7ab44;    match_id: 1-816b0693-1841-4b50-a33e-9c74db9d0a36
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: d8ed2bf0-9619-493f-9378-82d1f664eaa0;    match_id: 1-0b2707cc-99d3-4645-b2f9-c6058b8f335d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 7e6c3ce1-404d-4ffa-8172-b88518ad7940;    match_id: 1-1a4066fa-f72b-4820-a17d-10cc3520efc7
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-5d0958a3-1da2-4430-a2f0-0929d41591ac
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-7d783e4c-7af9-456d-81db-63c589166b1c
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 42185dca-e73b-4457-93a5-0ed5a01ec98f;    match_id: 1-861bc211-6989-4a17-9deb-3856316758d4
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-d04f8cf0-ce04-4868-92ca-a2bd9cd84257
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-0c2a4069-db0e-4a37-b2e5-387f1737682d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-9918455b-d87f-44a2-8b7e-0cb4e3c43a8b
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-03007eef-3475-43a6-b808-1c67aaadaaaf
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-2d861846-03d0-48a5-a9c9-1cc7219199e8
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-ce5e1481-3072-4910-ac9c-8cc242ed6683
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: c1383ad1-97bb-4c23-a17c-3b256b37b049;    match_id: 1-1c45e0f6-b43e-4a07-95b6-7afc5a9e1d42
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: c1383ad1-97bb-4c23-a17c-3b256b37b049;    match_id: 1-64b06c54-3ebf-4284-8be7-8f263fa446bf
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: c1383ad1-97bb-4c23-a17c-3b256b37b049;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 2ac05b32-7320-4e81-870e-16acdb93da2e;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-5d0958a3-1da2-4430-a2f0-0929d41591ac
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-7d783e4c-7af9-456d-81db-63c589166b1c
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-0c2a4069-db0e-4a37-b2e5-387f1737682d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-03007eef-3475-43a6-b808-1c67aaadaaaf
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-2d861846-03d0-48a5-a9c9-1cc7219199e8
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-9918455b-d87f-44a2-8b7e-0cb4e3c43a8b
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-d04f8cf0-ce04-4868-92ca-a2bd9cd84257
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-ce5e1481-3072-4910-ac9c-8cc242ed6683
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 2ac05b32-7320-4e81-870e-16acdb93da2e;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-5d0958a3-1da2-4430-a2f0-0929d41591ac
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 915376fe-04c3-436b-8e4e-172a09191cac;    match_id: 1-7d783e4c-7af9-456d-81db-63c589166b1c
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-ce5e1481-3072-4910-ac9c-8cc242ed6683
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-0c2a4069-db0e-4a37-b2e5-387f1737682d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-2d861846-03d0-48a5-a9c9-1cc7219199e8
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-03007eef-3475-43a6-b808-1c67aaadaaaf
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-d04f8cf0-ce04-4868-92ca-a2bd9cd84257
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: b0db2a0a-6411-4000-b403-662d0ad380b8;    match_id: 1-9918455b-d87f-44a2-8b7e-0cb4e3c43a8b
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 2ac05b32-7320-4e81-870e-16acdb93da2e;    match_id: 1-56f7c38e-e635-4fd2-81ad-ef76c4a7a9f5
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0a70bf1d-756f-4707-b8d8-8b542191a391;    match_id: 1-e164c270-8486-4d27-ad03-9ee75fd98ae8
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0a70bf1d-756f-4707-b8d8-8b542191a391;    match_id: 1-a9ac3939-abcf-46bc-9e17-aaabc4ec751a
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0a70bf1d-756f-4707-b8d8-8b542191a391;    match_id: 1-68805c95-8abd-4d00-8e7a-50ee78f534d3
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 311dbb0d-277f-4f54-89a3-1aed7f25a7d6;    match_id: 1-a9ac3939-abcf-46bc-9e17-aaabc4ec751a
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [401]>: Expecting value: line 1 column 1 (char 0) get_last_5_match    player_id: 887fced0-0d8a-407a-8fb7-a63fe96d440c
+<Response [403]>: 'items' get_last_5_match    player_id: 887fced0-0d8a-407a-8fb7-a63fe96d440c
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: a98db951-ac89-4bfb-8610-923c58075fcd;    match_id: 1-923834b5-7447-42bd-a081-977d92e7087d
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 5a7e2e33-7af2-4c5a-99d2-565435c7601f;    match_id: 1-28c82e1c-f2e1-4185-b986-ac44dacca457
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 5a7e2e33-7af2-4c5a-99d2-565435c7601f;    match_id: 1-d1926ee9-0461-45d7-a522-1e7994c796bc
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: bd6d38a2-50e9-4d0b-a76d-6e4c513cec05;    match_id: 1-dac86e9f-fefe-4c05-aa34-612f678a0fb4
+<Response [404 Not Found]>: 'rounds' get_stats_of_match    player_id: 0383a72d-4335-45aa-8ecc-758871067541;    match_id: 1-fb6474a5-abaf-4a47-aaf7-cd70a73aa46e

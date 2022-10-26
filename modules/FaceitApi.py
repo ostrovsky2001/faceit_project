@@ -1,6 +1,8 @@
 import requests
 import time
-
+import httpx
+import asyncio
+import os
 
 class FaceitApi():
     def __init__(self,token):
@@ -35,61 +37,68 @@ class FaceitApi():
             return [players_id,meta_stats,res['started_at']]
         
         except Exception as e:
-            
             if response.status_code == 429:
-                print('Слишком много запросов')
+                print('Слишком много запросов',response.status_code)
                 time.sleep(30)
             else:
-                print(e,'get_players_id_and_meta_stats')
-            return response.status_code
+                print(f'{response}: {e} get_players_id_and_meta_stats    match_id: {match_id}')
+                f = open('errors.txt', 'a+')
+                f.write(f'{response}: {e} get_players_id_and_meta_stats    match_id: {match_id}'+'\n')
+                f.close()
+            return 701
     
-    
-    def get_last_matches_id(self,player_id,to,game='csgo',limit=20):
+    async def get_last_matches_id(self,client,player_id,to,game='csgo',limit=20):
         """Получение id игр у игрока"""
         try:
             id_matches = []
             api_url = F"{self.__base_url}/players/{player_id}/history?game={game}&limit={limit}&to={to}"
-            response = requests.get(api_url, headers=self.__headers)
+            #response = requests.get(api_url, headers=self.__headers)
+            response = await client.get(api_url, headers=self.__headers)
             res = response.json()
             for match in res['items']:
                 if match['game_mode']=='5v5':
                     id_matches.append(match['match_id'])
-            return id_matches
+            return [id_matches,player_id]
         except Exception as e:
             if response.status_code == 429:
                 print('Слишком много запросов')
                 time.sleep(30)
             else:
-                print(e,'get_last_matches_id')
-            return response.status_code
-        
-        
-    def get_last_5_match(self,player_id,game='csgo',limit=2):
+                print(f'{response}: {e} get_last_matches_id    player_id: {player_id}')
+                f = open('errors.txt', 'a+')
+                f.write(f'{response}: {e} get_last_matches_id    player_id: {player_id}'+'\n')
+                f.close()
+            return 702
+
+    async def get_last_5_match(self,client,player_id,game='csgo',limit=2):
         
         try:
             id_matches = []
             api_url = F"{self.__base_url}/players/{player_id}/history?game={game}&limit={limit}"
-            response = requests.get(api_url, headers=self.__headers)
+            response = await client.get(api_url, headers=self.__headers)
             res = response.json()
             for match in res['items']:
                 if match['game_mode']=='5v5':
                     id_matches.append(match['match_id'])
             return id_matches
+
         except Exception as e:
             if response.status_code == 429:
                 print('Слишком много запросов')
                 time.sleep(30)
             else:
-                print(e,'get_last_5_match')
-            return response.status_code
+                print(f'{response}: {e} get_last_5_match    player_id: {player_id}')
+                f = open('errors.txt', 'a+')
+                f.write(f'{response}: {e} get_last_5_match    player_id: {player_id}'+'\n')
+                f.close()
+            return 703
     
     
-    def get_stats_of_match(self,match_id,player_id):
+    async def get_stats_of_match(self,client,match_id,player_id):
         try:
-            players_stats = []
+            players_stats=''
             api_url_stats = F"{self.__base_url}/matches/{match_id}/stats"
-            
-            response = requests.get(api_url_stats, headers=self.__headers)
+            response = await client.get(api_url_stats, headers=self.__headers)
             res_stats = response.json()['rounds'][0]
             for team in res_stats['teams']:
                 for player in team['players']:
@@ -111,20 +120,24 @@ class FaceitApi():
                 print('Слишком много запросов')
                 time.sleep(30)
             else:
-                print(e,'get_stats_of_match')
-            return response.status_code
+                print(f'{response}: {e} get_stats_of_match    player_id: {player_id};    match_id: {match_id}')
+                f = open('errors.txt', 'a+')
+                f.write(f'{response}: {e} get_stats_of_match    player_id: {player_id};    match_id: {match_id}'+'\n')
+                f.close()
+            return 704
     
-    def get_all_statistics(self,player_id):
+    async def get_all_statistics(self,client,player_id):
         
         try:
             map_stats = {}
-            api_url = F"{self.__base_url}/players/{player_id}"
-            res1 = requests.get(api_url,headers=self.__headers)
+            tasks = [F"{self.__base_url}/players/{player_id}",
+                    F"{self.__base_url}/players/{player_id}/stats/csgo"]
+            res1 = await client.get(tasks[0], headers=self.__headers)
+            res2 = await client.get(tasks[1], headers=self.__headers)
+            
             level = res1.json()['games']['csgo']['skill_level']
             elo = res1.json()['games']['csgo']['faceit_elo']
 
-            api_url = F"{self.__base_url}/players/{player_id}/stats/csgo"
-            res2 = requests.get(api_url, headers=self.__headers)
             res2_life,res2_segm = res2.json()['lifetime'], res2.json()['segments']
             del res2_life['K/D Ratio']
             del res2_life['Recent Results']
@@ -141,9 +154,99 @@ class FaceitApi():
             
             return [res2_life,map_stats]
         except Exception as e:
-            if res2.status_code == 429:
+            if res2.status_code == 429 or res2.status_code == 429:
                 print('Слишком много запросов')
                 time.sleep(30)
             else:
-                print(e,'get_all_statistics')
-            return res2.status_code
+                print(f'response_1: {res1}    response_2: {res2}:    {e}    get_all_statistics    player_id: {player_id}')
+                f = open('errors.txt', 'a+')
+                f.write(f'response_1: {res1}    response_2: {res2}:    {e}    get_all_statistics    player_id: {player_id}'+'\n')
+                f.close()
+            return 705
+
+            # def get_last_5_match(self,player_id,game='csgo',limit=2):
+        
+    #     try:
+    #         id_matches = []
+    #         api_url = F"{self.__base_url}/players/{player_id}/history?game={game}&limit={limit}"
+    #         response = requests.get(api_url, headers=self.__headers)
+    #         res = response.json()
+    #         for match in res['items']:
+    #             if match['game_mode']=='5v5':
+    #                 id_matches.append(match['match_id'])
+    #         return id_matches
+
+    #     except Exception as e:
+    #         if response.status_code == 429:
+    #             print('Слишком много запросов')
+    #             time.sleep(30)
+    #         else:
+    #             print(f'{response}: {e} get_last_5_match    player_id: {player_id}')
+    #             f = open('errors.txt', 'a+')
+    #             f.write(f'{response}: {e} get_last_5_match    player_id: {player_id}'+'\n')
+    #             f.close()
+    #         return 703
+
+    # def get_last_matches_id(self,player_id,to,game='csgo',limit=20):
+    #     """Получение id игр у игрока"""
+    #     try:
+    #         id_matches = []
+    #         api_url = F"{self.__base_url}/players/{player_id}/history?game={game}&limit={limit}&to={to}"
+    #         response = requests.get(api_url, headers=self.__headers)
+    #         res = response.json()
+    #         for match in res['items']:
+    #             if match['game_mode']=='5v5':
+    #                 id_matches.append(match['match_id'])
+    #         return id_matches
+    #     except Exception as e:
+    #         if response.status_code == 429:
+    #             print('Слишком много запросов')
+    #             time.sleep(30)
+    #         else:
+    #             print(f'{response}: {e} get_last_matches_id    player_id: {player_id}')
+    #             f = open('errors.txt', 'a+')
+    #             f.write(f'{response}: {e} get_last_matches_id    player_id: {player_id}'+'\n')
+    #             f.close()
+    #         return 702
+
+    # def get_all_statistics(self,player_id):
+        
+    #     try:
+    #         map_stats = {}
+    #         res=[]
+    #         tasks = [F"{self.__base_url}/players/{player_id}",
+    #                 F"{self.__base_url}/players/{player_id}/stats/csgo"]
+    #         with httpx.Client(headers=self.__headers) as client:
+    #             for api_url in tasks:
+    #                 response = client.get(api_url)
+    #                 res.append(response)
+            
+    #         res1,res2 = res[0],res[1]
+    #         level = res1.json()['games']['csgo']['skill_level']
+    #         elo = res1.json()['games']['csgo']['faceit_elo']
+
+    #         res2_life,res2_segm = res2.json()['lifetime'], res2.json()['segments']
+    #         del res2_life['K/D Ratio']
+    #         del res2_life['Recent Results']
+    #         timestamp = time.time()
+    #         res2_life['player_id'] = player_id
+    #         res2_life['elo'] = elo
+    #         res2_life['level'] = level
+    #         res2_life['time_parse'] = timestamp
+    #         for map_cs in res2_segm:
+    #             if map_cs['type']=='Map' and map_cs['mode']=='5v5':
+    #                 map_stats[map_cs['label']] = map_cs['stats']
+    #                 map_stats[map_cs['label']]['player_id'] = player_id
+    #                 map_stats[map_cs['label']]['time_parse'] = timestamp
+            
+    #         return [res2_life,map_stats]
+    #     except Exception as e:
+    #         if res2.status_code == 429 or res2.status_code == 429:
+    #             print('Слишком много запросов')
+    #             time.sleep(30)
+    #         else:
+    #             print(f'response_1: {res1}    response_2: {res2}:    {e}    get_all_statistics    player_id: {player_id}')
+    #             f = open('errors.txt', 'a+')
+    #             f.write(f'response_1: {res1}    response_2: {res2}:    {e}    get_all_statistics    player_id: {player_id}'+'\n')
+    #             f.close()
+    #         return 705
